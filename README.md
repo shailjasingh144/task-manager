@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+Task Management App
+Description
+This is a simple task management application with separate dashboards for Managers and Employees. It allows Managers to create projects, assign tasks to employees, and track their progress. Employees can view tasks assigned to them in their dashboard.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The app uses Firebase for authentication, and Firestore for storing project and task data.
 
-## Available Scripts
+Features
+Manager Dashboard: Create and manage projects, assign tasks to employees.
+Employee Dashboard: View tasks assigned to the logged-in employee.
+User Authentication: Firebase Authentication for signing up, logging in, and logging out.
+Task Management: View tasks, filter tasks by assignee, and assign new tasks to employees.
+Prerequisites
+Before running the app, make sure you have the following installed on your machine:
 
-In the project directory, you can run:
+Node.js (https://nodejs.org/)
+npm (Node Package Manager) or yarn (https://yarnpkg.com/)
+Firebase account (for Firestore and Authentication configuration)
+Setup & Running Locally
+1. Clone the repository
+Clone this repository to your local machine:
 
-### `npm start`
+bash
+Copy
+git clone https://github.com/your-repo-name/task-management-app.git
+cd task-management-app
+2. Install dependencies
+Run the following command to install the required dependencies:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+bash
+Copy
+npm install
+or if using yarn:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+bash
+Copy
+yarn install
+3. Firebase Configuration
+Make sure you have a Firebase project set up. You can do this by following the steps in the Firebase documentation.
 
-### `npm test`
+Create a Firebase project.
+Enable Firebase Authentication (Email/Password).
+Enable Firestore in the Firebase console.
+Once set up, get your Firebase configuration (API keys, etc.) from the Firebase Console and replace it in the firebase.js file in the src folder with your credentials.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. Running the Application
+To start the application locally, run:
 
-### `npm run build`
+bash
+Copy
+npm start
+or if using yarn:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+bash
+Copy
+yarn start
+This will start the development server and open the application in your browser at http://localhost:3000.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5. Access the Application
+Once the app is running locally, you can:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Sign Up to create a new account.
+Login using Firebase authentication to access the respective dashboards (Manager or Employee).
+Deployed Application (if applicable)
+If the application is deployed, you can access it via the following URL:
 
-### `npm run eject`
+arduino
+Copy
+https://your-deployed-app-url.com
+Replace your-deployed-app-url.com with the actual URL where the app is hosted.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Project Structure
+src/
+components/: Contains React components for different parts of the app, including dashboards and sign-up.
+firebase.js: Firebase configuration file.
+App.js: Main entry point for the app, setting up routes and authentication.
+firestoreService.js: Service file for interacting with Firestore (projects, tasks, users).
+Additional Notes
+Authentication: Firebase Authentication is used for login and signup.
+Firestore: Projects and tasks are stored in Firestore, and users can interact with them based on their roles (Manager or Employee).
+Troubleshooting
+If you're having issues with Firestore or Authentication, make sure you've properly configured Firebase and updated the credentials in firebase.js.
+If you're not seeing the UI updates, try running npm run build or yarn build to create a production build.
